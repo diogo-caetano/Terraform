@@ -1,6 +1,6 @@
 resource "aws_instance" "firstdemo" {
     count         = "1"
-    ami           = "ami-922914f7" #tem que ser feito na us-east-2 por conta da restrição da AMI
+    ami           = "${var.amitype}" #tem que ser feito na us-east-2 por conta da restrição da AMI. A variável pega a AMI do arquivo variables.tf
     instance_type = "t2.micro"
 
 tags {
